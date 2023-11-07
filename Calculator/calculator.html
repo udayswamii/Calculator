@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+	<style type="text/css">
+			.calc
+			{
+				background-color: lightyellow;
+				height: 400px;
+				width: 255px;
+				margin: 10% 30%;
+				border-radius: 40px;
+				padding: 20px;
+
+
+			}
+			input
+			{
+				width: 50px;
+				height: 50px;
+				background-color: black;
+				color: white;
+				border: double;
+				border-radius: 20px;
+				margin: 5px;
+				font-weight: bold;
+				transition-duration: 0.5s;
+				font-size: 20px;
+				cursor: pointer;
+			}
+			.Operator
+			{
+				background-color: olivedrab;
+			}
+			.ac{
+				width: 116px;
+				margin-right: 5px;
+			}
+			.op{
+				height: 70px;
+				width: 230px;
+				background-color: transparent;
+				color: black;
+				font-size: 30px;
+				text-align: right;
+				border: dotted red;
+
+			}
+			.eq{
+				background-color: ;
+
+			}
+			.eq:hover {
+			  cursor: pointer;
+			  transform: scale(1.1);
+			}
+			#allclear
+			{
+				background-color: orange;
+			}
+			.Operator:hover
+			{
+				transform: scale(0.9);
+			}
+			input[type="button"]:hover
+			{
+				transform: scale(0.9);
+				box-shadow: 0px 0px 5px orange;
+				opacity: 0.7;
+			}
+			.name {
+				  /*position: absolute;
+				  top: auto;
+				  left: 45%;*/
+				  width: auto;
+				  height: auto;
+				  padding: 4px;
+				  font-weight: bold;
+				  border-radius: 5px;
+				  background-color:#e6e3d5 ;
+				  color: black;
+				  font-size: 20px;
+				  border: none;
+				  border-radius: 20px;
+			}
+			.name:hover{
+				background-color: #dbab76;
+				transform: scale(0.6);
+			}
+	</style>
+</head>
+<body bgcolor="black">
+	
+	<div class="calc" align="center">
+		
+		<form>
+			<div class="name">+ - * %</div>
+			<div>
+					<input type="text" name="op"  class="op" disabled>
+			</div>
+			<div>
+				<input type="button" onclick="op.value=''" value="AC" class="ac" id="allclear">
+				<input type="button" onclick="op.value=udlast(op.value)" value="C" class="Operator" >
+				<input type="button" onclick="op.value+='%'" value="%" class="Operator" >
+			</div>
+			<div>
+				<input type="button" onclick="op.value+='7'" value="7" >
+				<input type="button" onclick="op.value+='8'" value="8" >
+				<input type="button" onclick="op.value+='9'" value="9" >
+				<input type="button" onclick="op.value+='+'" value="+" class="Operator" >
+			</div>
+			<div>
+				<input type="button" onclick="op.value+='4'" value="4" >
+				<input type="button" onclick="op.value+='5'" value="5" >
+				<input type="button" onclick="op.value+='6'" value="6" >
+				<input type="button" onclick="op.value+='-'" value="-" class="Operator" >
+			</div>
+			<div>
+				<input type="button" onclick="op.value+='1'" value="1" >
+				<input type="button" onclick="op.value+='2'" value="2" >
+				<input type="button" onclick="op.value+='3'" value="3" >
+				<input type="button" onclick="op.value+='*'" value="*" class="Operator" >
+			</div>
+			<div>
+				<input type="button" onclick="op.value+='.'" value="." style="background-color:;" >
+				<input type="button" onclick="op.value+='0'" value="0" >
+				<input type="button" onclick="op.value=eval(op.value)" value="=" class="eq" style="background-color: red;">
+				<input type="button" onclick="op.value+='/'" value="/" class="Operator" >
+			</div>
+			</form>
+	</div>
+	<script type="text/javascript">
+		function udlast(string) {
+			return string.substring(0, string.length - 1);
+		}
+	</script>
+</body>	
+</html>	
